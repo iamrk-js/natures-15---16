@@ -1,3 +1,15 @@
+.hero-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 *,
 *::after,
 *::before {
@@ -11,9 +23,17 @@ html {
   font-size: 10px;
 }
 
+body {
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.6rem;
+  color: #777;
+  padding: 3rem;
+  font-family: "Lato", serif;
+}
+
 .para {
   font-size: 1.6rem;
-  color: #55c57a;
 }
 
 .d-flex {
@@ -79,4 +99,93 @@ html {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
+}
+
+.hero-section {
+  height: 95vh;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(40, 180, 133, 0.8)), to(rgba(126, 213, 111, 0.8))), url(../images/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba(40, 180, 133, 0.8), rgba(126, 213, 111, 0.8)), url(../images/hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-section > .logo {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+  width: 7rem;
+}
+.hero-section > .logo img {
+  width: 100%;
+}
+
+.header .caption {
+  text-align: center;
+}
+.header-pri-heading {
+  font-size: 6rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3.5rem;
+  font-weight: 400;
+}
+.header-sec-heading {
+  font-size: 2.4rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 5rem;
+}
+
+.btn, .btn:link, .btn:visited {
+  cursor: pointer;
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  text-transform: uppercase;
+  border-radius: 5rem;
+  border: 0px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+}
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+.btn-green {
+  background-color: #55c57a;
+  color: #fff;
+}
+.btn::before {
+  content: "";
+  background-color: inherit;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 5rem;
+  z-index: -1;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+.btn:is(:hover, :focus) {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:is(:hover, :focus)::before {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  opacity: 0;
+}
+.btn:active {
+  -webkit-transform: translateY(-1px);
+          transform: translateY(-1px);
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
